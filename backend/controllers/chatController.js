@@ -7,7 +7,8 @@ import { v2 as cloudinary } from "cloudinary";
 export const getChatMessages = async (req, res) => {
     try {
         const { appointmentId } = req.params;
-        const userId = req.body.userId || req.body.docId; // from authUser or authDoctor middleware
+        // Get userId from req object (set by auth middleware) or from body as fallback
+        const userId = req.userId || req.docId || req.body.userId || req.body.docId;
 
         // Verify user belongs to this appointment
         const appointment = await appointmentModel.findById(appointmentId);
@@ -75,7 +76,8 @@ export const endChat = async (req, res) => {
 export const uploadFile = async (req, res) => {
     try {
         const { appointmentId, message } = req.body;
-        const userId = req.body.userId || req.body.docId; // from authUser or authDoctor middleware
+        // Get userId from req object (set by auth middleware) or from body as fallback
+        const userId = req.userId || req.docId || req.body.userId || req.body.docId;
 
         // Verify appointment exists and user belongs to it
         const appointment = await appointmentModel.findById(appointmentId);
