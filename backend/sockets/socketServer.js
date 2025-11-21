@@ -18,6 +18,7 @@ export const initializeSocket = (httpServer) => {
         cors: {
             origin: [
                 'https://healthcare-appointment-system-frontend.onrender.com',
+                'https://healthcare-appointment-system-admin.onrender.com',
                 'http://localhost:5173',
                 'http://localhost:5174',
                 'http://localhost:3000'
