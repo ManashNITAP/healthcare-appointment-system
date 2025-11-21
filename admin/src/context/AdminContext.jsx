@@ -7,7 +7,7 @@ export const AdminContext = createContext()
 
 const AdminContextProvider = (props) => {
 
-    const backendUrl = import.meta.env.VITE_BACKEND_URL || "https://healthcare-appointment-system-backend.onrender.com"
+    const backendUrl = "https://healthcare-appointment-system-fv7m.onrender.com"
 
     const [aToken, setAToken] = useState(localStorage.getItem('aToken') ? localStorage.getItem('aToken') : '')
 

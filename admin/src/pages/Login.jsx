@@ -11,7 +11,7 @@ const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  const backendUrl = import.meta.env.VITE_BACKEND_URL || "https://healthcare-appointment-system-backend.onrender.com"
+  const backendUrl = "https://healthcare-appointment-system-fv7m.onrender.com"
 
   const { setDToken } = useContext(DoctorContext)
   const { setAToken } = useContext(AdminContext)
