@@ -106,7 +106,7 @@ const Login = () => {
           />
         </div>
 
-        <button className='bg-primary text-white w-full py-2 my-2 rounded-md text-base'>
+        <button type="submit" className='bg-primary text-white w-full py-2 my-2 rounded-md text-base'>
           {state === 'Sign Up' ? 'Create account' : 'Login'}
         </button>
 
