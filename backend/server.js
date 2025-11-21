@@ -43,6 +43,9 @@ const corsOptions = {
     if (allowedOrigins.indexOf(origin) !== -1) {
       callback(null, true)
     } else {
+      // Log the origin for debugging
+      console.log('CORS blocked origin:', origin)
+      console.log('Allowed origins:', allowedOrigins)
       callback(new Error('Not allowed by CORS'))
     }
   },

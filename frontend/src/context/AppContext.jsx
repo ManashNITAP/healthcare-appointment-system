@@ -22,12 +22,15 @@ const AppContextProvider = (props) => {
             if (data.success) {
                 setDoctors(data.doctors)
             } else {
-                toast.error(data.message)
+                toast.error(data.message || 'Failed to load doctors')
             }
 
         } catch (error) {
-            console.log(error)
-            toast.error(error.message)
+            console.error('Error fetching doctors:', error)
+            const errorMessage = error?.response?.data?.message || error?.message || 'Failed to load doctors. Please check your connection.'
+            toast.error(errorMessage)
+            console.error('Backend URL:', backendUrl)
+            console.error('Full error:', error.response || error)
         }
 
     }
