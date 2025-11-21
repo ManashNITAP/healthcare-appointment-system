@@ -16,8 +16,14 @@ let ioInstance = null;
 export const initializeSocket = (httpServer) => {
     const io = new Server(httpServer, {
         cors: {
-            origin: "*", // Configure this properly for production
-            methods: ["GET", "POST"]
+            origin: [
+                'https://healthcare-appointment-system-frontend.onrender.com',
+                'http://localhost:5173',
+                'http://localhost:5174',
+                'http://localhost:3000'
+            ],
+            methods: ["GET", "POST"],
+            credentials: true
         }
     });
 
