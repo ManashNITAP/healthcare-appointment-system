@@ -239,15 +239,13 @@ The system supports multiple medical specialties:
 
 ## 🚀 Deployment
 
-### Deploying to Render (or similar platforms)
+For detailed deployment instructions, see [RENDER_DEPLOYMENT.md](RENDER_DEPLOYMENT.md)
+
+### Quick Deployment Summary
 
 **Backend Start Command:**
 ```bash
 npm start
-```
-or
-```bash
-node server.js
 ```
 
 **Important:** Do NOT use `npm run server` in production as it uses nodemon (development tool).
@@ -272,9 +270,8 @@ node server.js
 - Backend: No build step required
 
 **CORS Configuration:**
-- The backend is configured to allow requests from the Render frontend URL
-- If you change your frontend URL, update the `allowedOrigins` array in `backend/server.js`
-
+- The backend is configured to allow requests from the Render frontend and admin URLs
+- If you change your URLs, update the `allowedOrigins` array in `backend/server.js`
 ## 🔒 Security
 
 - JWT-based authentication for all users
