@@ -174,8 +174,8 @@ const Chat = ({ appointmentId, userType, currentUserId, userName, otherUserName,
                 formData,
                 {
                     headers: {
-                        token,
-                        'Content-Type': 'multipart/form-data'
+                        token
+                        // Don't set Content-Type manually - axios will set it with boundary
                     }
                 }
             );

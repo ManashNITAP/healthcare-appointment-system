@@ -19,6 +19,7 @@ const authUserOrDoctor = async (req, res, next) => {
                     const token_decode = jwt.verify(dtoken, process.env.JWT_SECRET)
                     req.body = req.body || {}
                     req.body.userId = token_decode.id
+                    req.body.docId = token_decode.id // Also set docId for compatibility
                     req.userType = 'doctor'
                     return next()
                 } catch (doctorError) {
@@ -35,6 +36,7 @@ const authUserOrDoctor = async (req, res, next) => {
             const token_decode = jwt.verify(dtoken, process.env.JWT_SECRET)
             req.body = req.body || {}
             req.body.userId = token_decode.id
+            req.body.docId = token_decode.id // Also set docId for compatibility
             req.userType = 'doctor'
             return next()
         } catch (error) {
