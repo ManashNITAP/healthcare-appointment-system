@@ -1,0 +1,10 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Heart shape for Cardiologist -->
+  <path d="M100 50 C100 50, 60 30, 50 50 C40 70, 50 100, 100 150 C150 100, 160 70, 150 50 C140 30, 100 50, 100 50 Z" fill="#5F6FFF" stroke="#0A1361" stroke-width="2"/>
+  <!-- ECG line inside heart -->
+  <path d="M 70 100 L 80 90 L 90 100 L 100 90 L 110 100 L 120 90 L 130 100" stroke="#0A1361" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- Pulse dots -->
+  <circle cx="80" cy="90" r="3" fill="#0A1361"/>
+  <circle cx="100" cy="90" r="3" fill="#0A1361"/>
+  <circle cx="120" cy="90" r="3" fill="#0A1361"/>
+</svg>
