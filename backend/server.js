@@ -40,13 +40,19 @@ const corsOptions = {
     // Allow requests with no origin (like mobile apps or curl requests)
     if (!origin) return callback(null, true)
     
+    // Log all origins for debugging
+    console.log('Request origin:', origin)
+    
     if (allowedOrigins.indexOf(origin) !== -1) {
       callback(null, true)
     } else {
+      // Temporarily allow all origins for debugging - REMOVE IN PRODUCTION
       // Log the origin for debugging
-      console.log('CORS blocked origin:', origin)
+      console.log('CORS: Origin not in allowed list, but allowing for now:', origin)
       console.log('Allowed origins:', allowedOrigins)
-      callback(new Error('Not allowed by CORS'))
+      callback(null, true) // Temporarily allow all origins
+      // TODO: Once you know the actual frontend URL, add it to allowedOrigins and change this back to:
+      // callback(new Error('Not allowed by CORS'))
     }
   },
   credentials: true,
