@@ -1,10 +1,12 @@
 import React, { useState, useRef, useEffect, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../context/AppContext';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { assets } from '../assets/assets';
 
 const AIChat = ({ onClose }) => {
+    const navigate = useNavigate();
     const { backendUrl, token } = useContext(AppContext);
     const [messages, setMessages] = useState([
         {
@@ -136,8 +138,12 @@ const AIChat = ({ onClose }) => {
     };
 
     const handleBookAppointment = (doctorId) => {
-        // Navigate to appointment booking page
-        window.location.href = `/appointment/${doctorId}`;
+        // Close the chat modal
+        onClose();
+        // Navigate to appointment booking page using React Router
+        navigate(`/appointment/${doctorId}`);
+        // Scroll to top
+        window.scrollTo(0, 0);
     };
 
     return (
